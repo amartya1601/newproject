@@ -1,9 +1,6 @@
 <template>
-  <Read/>
-  <ReadWithKey/>
-  <AddStudent/>
-  <DeleteStudent/>
-  <EditStudent/>
+  
+  <router-view/>
 </template>
 
 <script>
@@ -15,7 +12,7 @@
 
  export default {
    components:{
-     Read,ReadWithKey,AddStudent,EditStudent,DeleteStudent
+    // Read,ReadWithKey,AddStudent,EditStudent,DeleteStudent
      
 
    }

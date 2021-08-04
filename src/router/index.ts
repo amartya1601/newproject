@@ -1,10 +1,16 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
+import Vuenow from 'vue'; import VueRouter from 'vue-router'; 
+
 import Read from "../components/Read.vue";
 import ReadWithKey from "../components/ReadWithKey.vue";
 import AddStudent from "../components/AddStudent.vue";
 import DeleteStudent from "../components/DeleteStudent.vue";
 import EditStudent from "../components/EditStudent.vue";
+import { Vue } from "vue-class-component";
+
+
+
 
 
 
@@ -22,7 +28,7 @@ const routes: Array<RouteRecordRaw> = [
 
   {
 
-    path: "/",
+    path: "/ReadKey",
 
     name: "ReadWithKey",
 
@@ -31,7 +37,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
 
-    path: "/",
+    path: "/Add",
 
     name: "AddStudent",
 
@@ -40,7 +46,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
 
-    path: "/",
+    path: "/Delete",
 
     name: "DeleteStudent",
 
@@ -49,7 +55,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
 
-    path: "/",
+    path: "/Edit",
 
     name: "EditStudent",
 

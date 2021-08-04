@@ -21,7 +21,7 @@ export default {
 data () {
 
   return {
-    getAmount: [],
+    getStudent: [],
 
     student:{
 
@@ -44,7 +44,7 @@ data () {
        this.student.age = parseInt(this.student.age);
       var res= await axios.post('https://localhost:44340/api/student',this.student)
       .then((response) =>
-      {this.getAmount=response.data;})
+      {this.getStudent=response.data;})
       console.log(res.data);
         e.preventDefault();
     }
