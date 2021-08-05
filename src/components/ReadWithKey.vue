@@ -49,7 +49,7 @@
       </li>
     </ul>
     <div id="footer">
-      <footer-style>©Build and owned by Akriti and Amartya</footer-style>
+      <footer-style>©Build and Owned by Akriti and Amartya</footer-style>
     </div>
   </div>
 </template>

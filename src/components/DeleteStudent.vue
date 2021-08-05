@@ -12,9 +12,9 @@
       </button>
 
       <div class="form-floating mb-3">
-        <p class="badge bg-secondary">{{ ResposneMetadata.status }}</p>
-          <h3 v-if="ResposneMetadata.status==200">Succefull!</h3>
-          <h3 v-else-if="ResposneMetadata.status==400">Enter valid id! :( </h3>
+        <p class="badge bg-secondary"></p>
+          <h4 v-if="ResposneMetadata.data==1">Deleted Successfully!</h4>
+          <h4 v-else-if="ResposneMetadata.data==0 && ResposneMetadata.status==200">ID doesnt exist . Please re-enter </h4>
         </div>
 
     </form>
@@ -54,6 +54,7 @@
         id:'',
         ResposneMetadata: {
         status: 0,
+        data: 0
         }
       }  
     },
@@ -71,6 +72,7 @@
         
         console.log(result.data);
         console.log(result.status);
+        this.ResposneMetadata.data = result.data;
         this.ResposneMetadata.status = result.status;
       },
       

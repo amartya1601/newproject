@@ -17,6 +17,12 @@
 
       <br>
       <button type="button" class="btn btn-success" @click="addStudent">Add student</button>
+
+      <div class="form-floating mb-3">
+        <p class="badge bg-secondary"></p>
+          <h4 v-if="ResposneMetadata.status==200">Added Successfully!</h4>
+          <h4 v-else-if="ResposneMetadata.status==400">Wrong Entries . Please re-enter </h4>
+        </div>
     </form>
     <br>
 
@@ -54,6 +60,11 @@
       return {
         getStudent: [],
 
+        ResposneMetadata: {
+        status: 0,
+       
+        },
+
         student:{
           firstName: '',
           lastName: '',
@@ -69,9 +80,10 @@
         // var res=
         this.student.age = parseInt(this.student.age);
         var res= await axios.post('https://localhost:44340/api/student',this.student)
-        .then((response) =>
-        {this.getStudent=response.data;})
+        
         console.log(res.data);
+         console.log(res.status);
+        this.ResposneMetadata.status = res.status;
         e.preventDefault();
       }
     }

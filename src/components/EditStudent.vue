@@ -19,6 +19,13 @@
       <br>
       
       <button type="button" class="btn btn-success" @click="editStudent">Edit Student</button>
+
+      <div class="form-floating mb-3">
+        <p class="badge bg-secondary"></p>
+          <h4 v-if="ResposneMetadata.data==1">Edit Successfully!</h4>
+         
+          <h4 v-else-if="ResposneMetadata.data==0 && ResposneMetadata.status==200">ID doesnt exist . Please re-enter </h4>
+        </div>
     </form>
   
     <br>
@@ -57,6 +64,10 @@ export default {
     return {
       getStudent: [],
 
+ ResposneMetadata: {
+        status: 0,
+       data:0
+        },
       student:{
         firstName: '',
         lastName: '',
@@ -85,10 +96,12 @@ export default {
       console.log(this.student);
       this.student.age = parseInt(this.student.age);
       this.student.studId = parseInt(this.student.studId);
-      var res= await axios.put('https://localhost:44340/api/student',this.student)
-      .then((response) =>
-      {this.getStudent=response.data;})
-      console.log(res.data);
+      var result= await axios.put('https://localhost:44340/api/student',this.student)
+      
+          console.log(result.data);
+        console.log(result.status);
+        this.ResposneMetadata.data = result.data;
+        this.ResposneMetadata.status = result.status;
       e.preventDefault();  
     }
   }

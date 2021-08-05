@@ -26,7 +26,7 @@
     <ul class="nav mb-1 h4 justify-content-center">
 
       <li class="nav-item">
-        <router-link color="green" class="nav-link" to="/Add">Add Student</router-link>
+        <router-link  class="nav-link" to="/Add">Add Student</router-link>
       </li>
 
       <li class="nav-item">
