@@ -8,8 +8,14 @@
       <input type = "number" id="studId" placeholder="Enter Id" v-model="id"><br>
       <br>
       <button type="button" class="btn btn-success" @click="deleteStudent">Delete student
+        
       </button>
 
+      <div class="form-floating mb-3">
+        <p class="badge bg-secondary">{{ ResposneMetadata.status }}</p>
+          <h3 v-if="ResposneMetadata.status==200">Succefull!</h3>
+          <h3 v-else-if="ResposneMetadata.status==400">Enter valid id! :( </h3>
+        </div>
 
     </form>
     <br>
@@ -45,8 +51,11 @@
   export default {
     data () {
       return {
-        id:''
-      }
+        id:'',
+        ResposneMetadata: {
+        status: 0,
+        }
+      }  
     },
     methods: {
       async deleteStudent(e)
@@ -56,10 +65,15 @@
 
         const ide = parseInt(this.id);
         console.log(ide);
-        await axios.delete('https://localhost:44340/api/student/'+ide)
+        var result = await axios.delete('https://localhost:44340/api/student/'+ide)
         
         //console.log(res.data);
-      }
+        
+        console.log(result.data);
+        console.log(result.status);
+        this.ResposneMetadata.status = result.status;
+      },
+      
     }
   }
 </script>
@@ -78,5 +92,8 @@
     text-align: center;
   }
 
+  h3{
+    font-size: 50%;
+  }
 
 </style>
