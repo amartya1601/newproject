@@ -3,10 +3,10 @@
     <div id="edit">
       <h1>Edit Student Details</h1>
     </div>
-          Enter Id to be Edited
+      Enter Id to be Edited
     <br>
     <form>
-      <input type = "number" v-model="student.studId"/><br>
+      <input type = "number" placeholder="Enter Id" v-model="student.studId"/><br>
     
       <label for="firstname">First Name</label><br>
       <input type = "text"  id="firstname"  placeholder="Enter First Name" v-model="student.firstName"/><br>
@@ -16,11 +16,12 @@
     
       <label for="age">Age</label><br>
       <input type = "number" id="age"  placeholder="Enter Age" v-model="student.age"/><br>
-        <br>
-        <button type="button" class="btn btn-success" @click="editStudent">Edit Student</button>
+      <br>
+      
+      <button type="button" class="btn btn-success" @click="editStudent">Edit Student</button>
     </form>
   
-  <br>
+    <br>
     <ul class="nav mb-1 h4 justify-content-center">
 
       <li class="nav-item">
@@ -40,6 +41,10 @@
       </li>
 
     </ul>
+
+    <div id="footer">
+      <footer-style>©Build and owned by Akriti and Amartya</footer-style>
+    </div>
    
   </div>
 </template>
@@ -47,23 +52,21 @@
 <script>
 import axios from 'axios';
 export default {
-data () {
+  data () {
 
-  return {
-    getStudent: [],
+    return {
+      getStudent: [],
 
-    student:{
-      firstName: '',
-      lastName: '',
-      age: '',
-      studId: ''
+      student:{
+        firstName: '',
+        lastName: '',
+        age: '',
+        studId: ''
+      }
     }
-  }
-},
+  },
   
- 
   methods :{
-
    /* async GetStudent(e)
     {
       console.log(this.student.studId);
@@ -92,11 +95,11 @@ data () {
 }
 </script>
 
-<style>
 
+<style>
   #edit {
     padding: 20px;
-    color: rgba(2, 56, 9, 0.918);
+    color: rgba(6, 80, 16, 0.918);
     font: italic 1.2em "Fira Sans", serif, larger;
     font-weight: bolder;
     text-decoration: underline ;
@@ -104,4 +107,5 @@ data () {
     font-size: 100%;
     text-align: center;
   }
+
 </style>

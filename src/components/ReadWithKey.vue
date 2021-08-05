@@ -5,30 +5,31 @@
   </div>
 
   <div class="text-center">
-  <form>
-    <input type = "number" v-model="id"/><br><br>
-    <button type="button" class="btn btn-success" @click="searchStudent">Search student</button>
-    <br>
-    <br>
+    <form>
+      <label for="readbyID">Enter Id to Search</label><br>
+      <input type = "number" id="readbyID" placeholder="Enter Id" v-model="id"/><br><br>
+      <button type="button" class="btn btn-success" @click="searchStudent">Search student</button>
+      <br>
+      <br>
 
-    <div class="center">
-      <table  id="tablestyle">
-        <tr  v-for="student in getStudent" :key="student.studId">
-          <th>StudId</th>
-          <th>FirstName</th>
-          <th>LastName</th>
-          <th>Age</th>
-        </tr>
-        <tr  v-for="student in getStudent" :key="student.studId">
-          <td class="table-danger">{{student.studId}}</td>
-          <td class="table-danger">{{student.firstName}}</td>
-          <td class="table-danger">{{student.lastName}}</td>
-          <td class="table-danger">{{student.age}}</td>
-        </tr>
-      </table>
-    </div>
-  </form>
-  <br>
+      <div class="center">
+        <table  id="tablestyle">
+          <tr  v-for="student in getStudent" :key="student.studId">
+            <th>StudId</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Age</th>
+          </tr>
+          <tr  v-for="student in getStudent" :key="student.studId">
+            <td class="table-danger">{{student.studId}}</td>
+            <td class="table-danger">{{student.firstName}}</td>
+            <td class="table-danger">{{student.lastName}}</td>
+            <td class="table-danger">{{student.age}}</td>
+          </tr>
+        </table>
+      </div>
+    </form>
+    <br>
 
     <ul class="nav mb-1 h4 justify-content-center">
       <li class="nav-item">
@@ -47,6 +48,9 @@
       <router-link class="nav-link" to="/">View Student Details</router-link>
       </li>
     </ul>
+    <div id="footer">
+      <footer-style>©Build and owned by Akriti and Amartya</footer-style>
+    </div>
   </div>
 </template>
 
@@ -87,7 +91,7 @@ data () {
 <style>
   #readkey {
     padding: 20px;
-    color: rgb(131, 9, 5);
+    color: rgb(156, 17, 12);
     font: italic 1.2em "Fira Sans", serif, larger;
     font-weight: bolder;
     text-decoration: underline ;
@@ -107,17 +111,18 @@ data () {
 
   #tablestyle td, #tablestyle tr {
     border: 1px solid rgb(12, 3, 3);
-    padding: 8px;
+    font-weight: bold;
+    padding: 10px;
   }
 
   #tablestyle th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: rgb(233, 230, 48);
-    color: rgb(233, 65, 14);
+    background-color: rgb(113, 54, 223);
+    color: white;
     text-decoration: underline ;
-    text-decoration-color: rgb(233, 65, 14);
+    text-decoration-color: white;
   }
-
+  
 </style>

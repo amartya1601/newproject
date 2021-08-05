@@ -1,12 +1,18 @@
 <template>
   <div class="text-center">
     <div id="delete">
-    <h1>Delete Student</h1></div>
+      <h1>Delete Student</h1>
+    </div>
     <form>
-      <input type = "number" v-model="id"><br>
-      <br><br>
-      <button type="button" class="btn btn-success" @click="deleteStudent">Delete student</button>
+      <label for="studId">Enter Id to Delete</label><br>
+      <input type = "number" id="studId" placeholder="Enter Id" v-model="id"><br>
+      <br>
+      <button type="button" class="btn btn-success" @click="deleteStudent">Delete student
+      </button>
+
+
     </form>
+    <br>
     <br>
 
     <ul class="nav mb-1 h4 justify-content-center">
@@ -26,8 +32,13 @@
       <router-link class="nav-link" to="/ReadKey">Search Student</router-link>
       </li>
     </ul>
+
+    <div id="footer">
+      <footer-style>©Build and owned by Akriti and Amartya</footer-style>
+    </div>
   </div>
 </template>
+
 
 <script>
   import axios from 'axios';
@@ -53,18 +64,12 @@
   }
 </script>
 
+
 <style>
-  body{
-    background-image: url('https://mcdn.wallpapersafari.com/medium/12/93/Ei0zCM.jpg');
-    height: 100%;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-  }
+
   #delete {
     padding: 20px;
-    color: rgba(6, 4, 109, 0.918);
+    color: rgba(14, 12, 134, 0.918);
     font: italic 1.2em "Fira Sans", serif, larger;
     font-weight: bolder;
     text-decoration: underline ;
@@ -72,4 +77,6 @@
     font-size: 100%;
     text-align: center;
   }
+
+
 </style>

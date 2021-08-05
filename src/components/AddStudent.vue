@@ -1,7 +1,8 @@
 <template>
   <div class="text-center">
     <div id="add">
-      <h1>Add Student Details</h1></div>
+      <h1>Add Student Details</h1>
+    </div>
 
 
     <form>
@@ -37,9 +38,14 @@
         <router-link class="nav-link" to="/ReadKey">Search Student</router-link>
       </li>
 
-      </ul>
+    </ul>
+
+    <div id="footer">
+      <footer-style>©Build and owned by Akriti and Amartya</footer-style>
+    </div>
   </div>
 </template>
+
 
 <script>
   import axios from 'axios';
@@ -66,7 +72,7 @@
         .then((response) =>
         {this.getStudent=response.data;})
         console.log(res.data);
-          e.preventDefault();
+        e.preventDefault();
       }
     }
   }
@@ -75,7 +81,7 @@
 <style>
   #add {
     padding: 20px;
-    color: rgba(100, 4, 109, 0.918);
+    color: rgba(124, 9, 134, 0.918);
     font: italic 1.2em "Fira Sans", serif, larger;
     font-weight: bolder;
     text-decoration: underline ;
@@ -83,4 +89,5 @@
     font-size: 100%;
     text-align: center;
   }
+
 </style>

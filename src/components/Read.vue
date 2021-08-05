@@ -43,6 +43,10 @@
 
     </ul>
     <br>
+
+    <div id="footer">
+      <footer-style>©Build and owned by Akriti and Amartya</footer-style>
+    </div>
   </div>
 </template>
 
@@ -64,11 +68,13 @@
   
   },
   methods: {
-    async fetch() {
+    async fetch(e) {
       await axios.get('https://localhost:44340/api/student')
       .then((response) => {
         this.getStudent = response.data;
       })
+      
+      e.preventDefault();
     }
   },
 
@@ -82,7 +88,7 @@
 <style>
 
   body{
-    background-image: url('https://mcdn.wallpapersafari.com/medium/12/93/Ei0zCM.jpg');
+    background-image: url('https://i.pinimg.com/564x/41/1f/d0/411fd0e4f886f4085167827f47c1be17.jpg');
     height: 100%;
     width: 100%;
     background-position: center;
@@ -92,7 +98,7 @@
 
   #viewheading{
     padding: 20px;
-    color: rgba(30, 1, 54, 0.918);
+    color: rgba(75, 13, 126, 0.918);
     font: italic 1.2em "Fira Sans", serif, larger;
     font-weight: bolder;
     text-decoration: underline ;
@@ -113,17 +119,29 @@
 
   #tablestyle td, #tablestyle tr {
     border: 1px solid rgb(12, 3, 3);
-    padding: 8px;
+    font-weight: bold;
+    padding: 10px;
   }
 
   #tablestyle th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: rgb(233, 230, 48);
-    color: rgb(233, 65, 14);
+    background-color: rgb(113, 54, 223);
+    color: white;
     text-decoration: underline ;
-    text-decoration-color: rgb(233, 65, 14);
+    text-decoration-color: white;
   }
+
+  #footer{
+    position: fixed;
+    width: 100%;
+    right: 15px;
+    bottom: 10px;
+    font-size: 90%;
+    text-align: right;
+    color:rgba(30, 1, 54, 0.918)
+  }
+
 
 </style>
